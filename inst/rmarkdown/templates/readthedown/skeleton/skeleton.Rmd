@@ -1,14 +1,210 @@
 ---
-title: ""
+title: "Readthedown Example"
 date: "`r Sys.Date()`"
+author: 
+  - name: "Liu Chaoran <6chaoran@gmail.com>"
+    avatar: ./logo/avatar.png
+    title: Data Scientist
 output:
-  rmdformats::readthedown:
+  readthedown::readthedown:
     highlight: kate
+    fig_width: 14
+    fig_height: 8
+    number_sections: true
+    code_folding: none
+    logo: ./logo/logo.png
+    logo2: ./logo/logo2.png
+    favicon: ./logo/favicon.png
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}
 ## Global options
-knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_chunk$set(cache = FALSE)
+require(ggplot2)
+require(dplyr)
+require(glue)
+require(kableExtra)
 ```
 
+# Quick Start
 
+## Install template package
+```
+devtools::install_github("6chaoran/readthedown")
+```
+
+## Create Rmarkdown from template
+RStudio > File > New File > R Markdown ... > From Template
+
+![](./imgs/from-template.png)
+
+## Added features
+
+1. logo options are added both inside the sidebar (logo) and main content (logo2)
+2. favicon option is added
+3. author avatar option is added
+4. colored block quote to differentiate level of attention
+5. multiple columns layout to display content side by side
+6. fixed css style of details & summary
+
+## Cutsomize the template
+
+Modify the `style.css` to further customize the markdown template
+
+
+# Block Quote
+
+```
+::: {.info}
+> this is an info block quote
+:::
+
+::: {.warn}
+> this is a warning block quote
+:::
+
+::: {.err}
+> this is an error block quote
+:::
+```
+
+::: {.info}
+> this is an info block quote
+:::
+
+::: {.warn}
+> this is a warning block quote
+:::
+
+::: {.err}
+> this is an error block quote
+:::
+
+# Details/Summary
+
+```
+<details>
+<summary>click me to view details</summary>
+This is the details.
+</details>
+```
+
+<details>
+<summary>click me to view details</summary>
+This is the details.
+```{r}
+data("mtcars")
+p <- hist(mtcars$mpg)
+tbl <- mtcars %>%
+  head() %>%
+  kable()
+plot(p)
+```
+
+</details>
+
+# Multiple Columns
+
+## Two Columns
+:::: {.cols}
+::: {.cols-2}
+```{r results='asis'}
+cat("__column A__")
+plot(p)
+```
+:::
+::: {.cols-2}
+```{r results='asis'}
+cat("__column B__")
+print(tbl)
+```
+:::
+::::
+
+## Three Columns
+
+:::: {.cols}
+::: {.cols-3}
+```{r results='asis'}
+cat("__column A__")
+plot(p)
+```
+:::
+::: {.cols-3}
+```{r results='asis'}
+cat("__column B__")
+plot(p)
+```
+:::
+::: {.cols-3}
+```{r results='asis'}
+cat("__column C__")
+print(tbl)
+```
+:::
+::::
+
+
+# Chunks in Loop 
+
+## plots in a loop {.tabset .tabset-pills}
+
+```{r plots in a loop, results='asis'}
+# chunk options: results='asis'
+data("mtcars")
+for(i in seq(4)){
+  cat(glue::glue("\n\n### Tab {i} {{-}}\n\n"))
+  plot.new()
+  mtcars %>%
+    sample_n(500, replace = TRUE) %>%
+    pull(mpg) %>%
+    hist()
+  cat("\n\n")
+}
+```
+
+## ggplot in a loop {.tabset .tabset-pills}
+
+```{r ggplot in a loop, results='asis'}
+# chunk options: results='asis'
+data("mtcars")
+for(i in seq(4)){
+  cat(glue::glue("\n\n### Tab {i} {{-}}\n\n"))
+  p <- mtcars %>%
+    sample_n(500, replace = TRUE) %>%
+    ggplot(aes(x = mpg)) +
+    geom_histogram(bins = 30) 
+  plot(p)
+  cat("\n\n")
+}
+```
+
+## kable in a loop {.tabset .tabset-pills}
+```{r kable in a loop, results='asis'}
+# chunk options: results='asis'
+data("mtcars")
+for(i in seq(4)){
+  cat(glue::glue("\n\n### Tab {i} {{-}}\n\n"))
+  p <- mtcars %>%
+    sample_n(5, replace = TRUE) %>%
+    knitr::kable()
+  print(p)
+  cat("\n\n")
+}
+```
+
+## styled kable in a loop {.tabset .tabset-pills}
+```{r styled kable in a loop, results='asis'}
+# chunk options: results='asis'
+data("mtcars")
+for(i in seq(4)){
+  cat(glue::glue("\n\n### Tab {i} {{-}}\n\n"))
+  mtcars %>%
+    sample_n(5, replace = TRUE) %>%
+    knitr::kable("html") %>%
+    kable_styling("striped", position = "left") %>%
+    cat()
+  cat("\n\n")
+}
+```

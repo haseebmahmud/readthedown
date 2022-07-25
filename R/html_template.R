@@ -1,4 +1,5 @@
 ## Shared HTML template function
+package <- 'readthedown'
 
 html_template <- function(
   template_name,
@@ -62,6 +63,18 @@ html_template <- function(
             pandoc_args <- c(pandoc_args, "--variable", "cards:true")
         }
     }
+    
+    ## extra arguments
+    if (!is.null(args[["logo"]])) {
+      pandoc_args <- c(pandoc_args, "--variable", paste0("logo:", args[["logo"]]))
+    }
+    if (!is.null(args[["logo2"]])) {
+      pandoc_args <- c(pandoc_args, "--variable", paste0("logo2:", args[["logo2"]]))
+    }
+    if (!is.null(args[["favicon"]])) {
+      pandoc_args <- c(pandoc_args, "--variable", paste0("favicon:", args[["favicon"]]))
+    }
+    
     ## downcute default style
     if (!is.null(args[["default_style"]])) {
         if (args[["default_style"]] == "dark") {
@@ -86,7 +99,7 @@ html_template <- function(
 
     ## Call rmarkdown::html_document
     html_document_args <- list(
-        template = system.file(template_path, package = "rmdformats"),
+        template = system.file(template_path, package = package),
         extra_dependencies = extra_dependencies,
         pandoc_args = pandoc_args
     )

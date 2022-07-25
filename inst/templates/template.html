@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="generator" content="pandoc" />
+    $if(favicon)$
+    <link rel="icon" type="image/x-icon" href="$favicon$">
+    $endif$
 
     $for(author-meta)$
     <meta name="author" content="$author-meta$" />
@@ -180,15 +183,23 @@
           <li class="divider"></li>
           $for(author)$
           $if(author.name)$
-            <li><span><i class="glyphicon glyphicon-user"></i> $author.name$
-	          $if(author.affiliation)$
-              <br />$author.affiliation$
-            $endif$
-	          $if(author.email)$
-	            <br />$author.email$<
-	          $endif$
-            </span></li>
-          $else$
+            <li>
+              <div class="profile">
+                $if(author.avatar)$
+                <img src="$author.avatar$" class="avatar">
+                $endif$
+                <div class="bio">
+                  $author.name$
+                  $if(author.affiliation)$
+                    <br />$author.affiliation$
+                  $endif$
+      	          $if(author.email)$
+      	            <br />$author.email$<
+      	          $endif$
+                </div>
+              </div>
+            </i> 
+	        $else$
             <li><span><i class="glyphicon glyphicon-user"></i> $author$</span></li>
           $endif$
           $endfor$
@@ -248,13 +259,19 @@
    $include-before$
    $endfor$
      
+  <div class="logo2">
+   <div>
    $if(title)$
    <h1 class="title">$title$</h1>
    $endif$
    $if(subtitle)$
    <h1 class="subtitle">$subtitle$</h1>
    $endif$
-
+   </div>
+   $if(logo2)$
+   <img src="$logo2$" />
+   $endif$
+  </div> 
    $if(downcute)$
    $for(author)$
    <p class="authors">
@@ -278,6 +295,8 @@
    $if(readthedown)$
    <!-- readthedown authors -->
    <div id="sidebar">
+    <!-- logo -->
+    <div class="logo"><img src="$logo$"/> </div>
     <h2><a href="#content">$title$</a></h2>
     <div id="toc">
       $toc$
@@ -285,13 +304,24 @@
     <div id="postamble" data-toggle="wy-nav-shift" class="status">
       $for(author)$
       $if(author.name)$
-      <p class="author"><span class="glyphicon glyphicon-user"></span> $author.name$
-	$if(author.affiliation)$
-	<br /><span class="author_affil">$author.affiliation$</span>$endif$
-	$if(author.email)$
-	<br /><a class="author_email" href="mailto:#">$author.email$</a>
-	$endif$
-      </p>
+      <div class="profile">
+        $if(author.avatar)$
+        <img src="$author.avatar$" class="avatar">
+        $endif$
+        <div class="bio">
+          <p class="author">$author.name$
+          $if(author.affiliation)$
+            <br /><span class="author_affil">$author.affiliation$</span>
+          $endif$
+          $if(author.title)$
+            <br /><span class="author_title">$author.title$</span>
+          $endif$
+          $if(author.email)$
+            <a class="author_email" href="mailto:#">$author.email$</a>
+          $endif$ 
+          </p>
+        </div>
+      </div>
       $else$
       <p class="author"><span class="glyphicon glyphicon-user"></span> $author$</p>
       $endif$

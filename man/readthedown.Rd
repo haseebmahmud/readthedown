@@ -18,6 +18,9 @@ readthedown(
   pandoc_args = NULL,
   md_extensions = NULL,
   mathjax = "rmdformats",
+  logo = NULL,
+  logo2 = NULL,
+  favicon = NULL,
   ...
 )
 }

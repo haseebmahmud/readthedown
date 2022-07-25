@@ -44,6 +44,9 @@ readthedown <- function(fig_width = 8,
                        pandoc_args = NULL,
                        md_extensions = NULL,
                        mathjax = "rmdformats",
+                       logo = NULL,
+                       logo2 = NULL,
+                       favicon = NULL,
                        ...) {
 
     html_template(
@@ -65,6 +68,9 @@ readthedown <- function(fig_width = 8,
         use_bookdown = use_bookdown,
         md_extensions = md_extensions,
         mathjax = mathjax,
+        logo = logo,
+        logo2 = logo2,
+        favicon = favicon,
         ...
     )
 
@@ -80,7 +86,7 @@ html_dependency_readthedown <- function(embed_fonts = TRUE) {
   }
   htmltools::htmlDependency(name = "readthedown",
                  version = "0.1",
-                 src = system.file("templates/readthedown", package = "rmdformats"),
+                 src = system.file("templates/readthedown", package = "readthedown"),
                  script = "readthedown.js",
                  stylesheet = stylesheets)
 }

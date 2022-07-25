@@ -1,0 +1,108 @@
+#content {
+  max-width: 95%;
+}
+
+#sidebar > h2 {
+  background-color: darkblue;
+}
+
+.logo {
+  background-color: darkblue;
+}
+
+h1, h2, h3 {
+  color: darkblue;
+}
+
+div.warn > blockquote {
+  border-left-color: orange;
+}
+
+div.info > blockquote {
+  border-left-color: green;
+}
+
+div.err > blockquote {
+  border-left-color: red;
+}
+
+details > summary:first-of-type {
+  display: list-item;
+}
+
+/* logo (white) is the left one in sidebar */
+/* logo2 is the right-top one */
+
+.logo > img {
+  height: 75px;
+  padding: 10px;
+}
+
+.logo2 > img {
+  height: 75px;
+  padding: 10px;
+}
+
+.logo2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+}
+
+/* author panel */
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+#postamble .author span {
+    font-size: 90%;
+}
+
+/* multiple columns */
+
+div.cols {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+div.cols > div.cols-2 {
+  max-width: 50%;
+  margin: 10px;
+}
+
+div.cols > div.cols-3 {
+  max-width: 33%;
+  margin: 10px;
+}
+
+div.cols > div.cols-4 {
+  max-width: 25%;
+  margin: 10px;
+}
+

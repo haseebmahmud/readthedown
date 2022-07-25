@@ -1,15 +1,13 @@
-Package: rmdformats
-Maintainer: Julien Barnier <julien.barnier@cnrs.fr>
-Authors@R: c(person("Julien", "Barnier", email="julien.barnier@cnrs.fr",
+Package: readthedown
+Maintainer: Liu Chaoran <6chaoran@gmail.com>
+Authors@R: c(person("Liu", "Chaoran", email="6chaoran@gmail.com",
     role=c("aut","cre")))
-Version: 1.0.4.9000
-Date: 2022-05-18
+Version: 0.0.1.9000
+Date: 2022-07-18
 License: GPL (>= 2)
 Encoding: UTF-8
-Title: HTML Output Formats and Templates for 'rmarkdown' Documents
-Description: HTML formats and templates for 'rmarkdown' documents, with some extra
-    features such as automatic table of contents, lightboxed figures, dynamic
-    crosstab helper.
+Title: HTML Output Formats and Templates for 'readthedown' Documents
+Description: HTML formats and templates for 'readthedown' documents
 Imports: 
     knitr,
     rmarkdown,
@@ -20,6 +18,6 @@ Suggests:
     DT,
     palmerpenguins,
     ggplot2
-URL: https://github.com/juba/rmdformats
-BugReports: https://github.com/juba/rmdformats/issues
-RoxygenNote: 7.1.2
+URL: https://github.com/6chaoran/readthedown
+BugReports: https://github.com/6chaoran/readthedown/issues
+RoxygenNote: 7.2.1

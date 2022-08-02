@@ -1,8 +1,6 @@
 # `readthedown`
 
-Adapted from the corresponding `readtheorg` theme of the [org-html-themes](https://github.com/fniessen/org-html-themes) project, fully responsive with dynamic table of contents and collapsible navigation.
-
-[![readthedown example](man/figures/readthedown.png)](https://juba.github.io/rmdformats/articles/examples/readthedown.html)
+[![readthedown example](https://6chaoran.github.io/data-story/assets/document/readthedown-template.jpg)]([https://juba.github.io/rmdformats/articles/examples/readthedown.html](https://6chaoran.github.io/data-story/assets/document/readthedown-template.html))
 
 # Quick Start
 
@@ -14,7 +12,7 @@ devtools::install_github("6chaoran/readthedown")
 ## Create Rmarkdown from template
 RStudio > File > New File > R Markdown ... > From Template
 
-![](./imgs/from-template.png)
+![](https://6chaoran.github.io/data-story/assets/document/readthedown-from-template.png)
 
 ## Added features
 

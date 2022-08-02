@@ -1,6 +1,6 @@
 # `readthedown`
 
-[![readthedown example](https://6chaoran.github.io/data-story/assets/document/readthedown-template.jpg)]([https://juba.github.io/rmdformats/articles/examples/readthedown.html](https://6chaoran.github.io/data-story/assets/document/readthedown-template.html))
+[![readthedown example](https://6chaoran.github.io/data-story/assets/document/readthedown-template.jpg)](https://6chaoran.github.io/data-story/assets/document/readthedown-template.html)]
 
 # Quick Start
 

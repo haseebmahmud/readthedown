@@ -1,6 +1,8 @@
 # `readthedown`
 
-[![readthedown example](https://6chaoran.github.io/data-story/assets/document/readthedown-template.jpg)](https://6chaoran.github.io/data-story/assets/document/readthedown-template.html)]
+A modified `readthedown` theme that offers out-of-box template with predefined styles, and configurations. It is greatly inspired and modified based on [juba/rmdformats](https://github.com/juba/rmdformats) package
+
+[![readthedown example](https://6chaoran.github.io/data-story/assets/document/readthedown-template.jpg)](https://6chaoran.github.io/data-story/assets/document/readthedown-template.html)
 
 # Quick Start
 

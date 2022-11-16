@@ -11,16 +11,21 @@ output:
     fig_width: 14
     fig_height: 8
     number_sections: true
-    code_folding: none
+    code_folding: hide
     logo: ./logo/logo.png
     logo2: ./logo/logo2.png
     favicon: ./logo/favicon.png
-    css: style.css
+    css:
+    - https://use.fontawesome.com/releases/v5.15.4/css/all.css
+    - style.css
 ---
 
 ```{r setup, include=FALSE}
 ## Global options
-knitr::opts_chunk$set(cache = FALSE)
+knitr::opts_chunk$set(
+  cache = FALSE,
+  echo = TRUE
+)
 require(ggplot2)
 require(dplyr)
 require(glue)
@@ -44,7 +49,7 @@ RStudio > File > New File > R Markdown ... > From Template
 1. logo options are added both inside the sidebar (logo) and main content (logo2)
 2. favicon option is added
 3. author avatar option is added
-4. colored block quote to differentiate level of attention
+4. admonitions to differentiate level of attention
 5. multiple columns layout to display content side by side
 6. fixed css style of details & summary
 
@@ -53,32 +58,86 @@ RStudio > File > New File > R Markdown ... > From Template
 Modify the `style.css` to further customize the markdown template
 
 
-# Block Quote
+# Admonitions
+
+currently support
+
+* note: `.adm .adm-note`
+* warning: `.adm .adm-warning`
+* seealso: `.adm .adm-seealso`
+* tip: `.adm .adm-tip`
+* danger: `.adm .adm-danger`
 
 ```
-::: {.info}
-> this is an info block quote
-:::
+::: {.adm .adm-note}
+note
 
-::: {.warn}
-> this is a warning block quote
-:::
-
-::: {.err}
-> this is an error block quote
+message
 :::
 ```
 
-::: {.info}
-> this is an info block quote
+::: {.adm .adm-note}
+note
+
+message
 :::
 
-::: {.warn}
-> this is a warning block quote
+
+```
+:::{.adm .adm-warning}
+warning
+
+message
+:::
+```
+
+:::{.adm .adm-warning}
+warning
+
+message
 :::
 
-::: {.err}
-> this is an error block quote
+```
+:::{.adm .adm-seealso}
+warning
+
+message
+:::
+```
+
+:::{.adm .adm-seealso}
+seealso
+
+message
+:::
+
+```
+:::{.adm .adm-tip}
+tip
+
+message
+:::
+```
+
+:::{.adm .adm-tip}
+tip
+
+message
+:::
+
+
+```
+:::{.adm .adm-danger}
+danger
+
+message
+:::
+```
+
+:::{.adm .adm-danger}
+danger
+
+message
 :::
 
 # Details/Summary

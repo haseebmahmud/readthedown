@@ -2,7 +2,7 @@ Package: readthedown
 Maintainer: Liu Chaoran <6chaoran@gmail.com>
 Authors@R: c(person("Liu", "Chaoran", email="6chaoran@gmail.com",
     role=c("aut","cre")))
-Version: 0.0.1.9000
+Version: 0.0.2
 Date: 2022-07-18
 License: GPL (>= 2)
 Encoding: UTF-8
@@ -20,4 +20,4 @@ Suggests:
     ggplot2
 URL: https://github.com/6chaoran/readthedown
 BugReports: https://github.com/6chaoran/readthedown/issues
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.2

@@ -47,6 +47,7 @@ readthedown <- function(fig_width = 8,
                        logo = NULL,
                        logo2 = NULL,
                        favicon = NULL,
+                       ccbutton = NULL,
                        ...) {
 
     html_template(
@@ -71,6 +72,7 @@ readthedown <- function(fig_width = 8,
         logo = logo,
         logo2 = logo2,
         favicon = favicon,
+        ccbutton = ccbutton,
         ...
     )
 

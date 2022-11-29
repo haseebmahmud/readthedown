@@ -74,6 +74,9 @@ html_template <- function(
     if (!is.null(args[["favicon"]])) {
       pandoc_args <- c(pandoc_args, "--variable", paste0("favicon:", args[["favicon"]]))
     }
+    if (!is.null(args[["ccbutton"]])) {
+      pandoc_args <- c(pandoc_args, "--variable", paste0("ccbutton:", args[["ccbutton"]]))
+    }
     
     ## downcute default style
     if (!is.null(args[["default_style"]])) {

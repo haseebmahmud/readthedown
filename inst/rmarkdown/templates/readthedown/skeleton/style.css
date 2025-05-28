@@ -3,15 +3,15 @@
 }
 
 #sidebar > h2 {
-  background-color: darkblue;
+  background-color: #1560bd;
 }
 
 .logo {
-  background-color: darkblue;
+  background-color: #1560bd;
 }
 
 h1, h2, h3 {
-  color: darkblue;
+  color: #1560bd;
 }
 
 details > summary:first-of-type {

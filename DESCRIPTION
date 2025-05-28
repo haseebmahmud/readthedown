@@ -1,9 +1,9 @@
 Package: readthedown
-Maintainer: Liu Chaoran <6chaoran@gmail.com>
-Authors@R: c(person("Liu", "Chaoran", email="6chaoran@gmail.com",
+Maintainer: Haseeb <haseeb.mahmud@gmail.com>
+Authors@R: c(person("Haseeb", "Mahmud", email="haseeb.mahmud@gmail.com",
     role=c("aut","cre")))
 Version: 0.0.2
-Date: 2022-07-18
+Date: 2025-05-28
 License: GPL (>= 2)
 Encoding: UTF-8
 Title: HTML Output Formats and Templates for 'readthedown' Documents
